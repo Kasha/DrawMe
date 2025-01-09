@@ -1,4 +1,5 @@
 # DrawMe
+Registers Base or Base Derived Class into a Generic Template Functor for Creating Shape when requested according to Buffer Rescued from file
 Generic serialization/Deserialization of multiple base derived objects.
 
 1. Easy to implement and add new shape.
@@ -70,6 +71,6 @@ Object Name: Circle, Draw: radius = 23, x = 1.700000 y = 6.400000
 
 
 Finshed Loading Shapes and Drawing ThemMain logic completed successfully.
-BaseFactoryRegistrations.h
 
-Registers Base or Base Derived Class into a Generic Template Functor for Creating Right Object when requested according to Object Buffer Rescued from file
+
+
