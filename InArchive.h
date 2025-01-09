@@ -4,10 +4,10 @@
 class InArchive: public Archive
 {
 public:
-	InArchive();
-	~InArchive();
+	InArchive() = default;
+	~InArchive() = default;
 
 	void Draw();
-	void Serialization(char *fileName);
+	void Serialization(const string& fileName);
 };
 

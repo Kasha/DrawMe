@@ -1,25 +1,30 @@
 #include "stdafx.h"
-#include "BaseFactory.h"
 #include "Circle.h"
+#include "resources.h"
 
 using namespace ShapeMe;
 
-//Register Shape for generic Class Factory (The Only Place where Shape Type is mentioned)
-REGISTER_CLASS("Circle", Circle);
 
-Circle::Circle(float x, float y, unsigned int r, string name) : Point(x, y, name)
-{
-	m_r = r;
-}
+REGISTER_SHAPE(Circle);
 
-Circle::Circle(Circle& circle) : Point(circle)
+// Copy constructor
+Circle::Circle(const Circle& circle) : Point(circle)
 {
 	m_r = circle.m_r;
 }
-
-Circle::Circle(Circle* pCircle) : Point(pCircle)
+// Copy constructor from pointer
+Circle::Circle(const Circle* pCircle) : Point(pCircle)
 {
 	m_r = pCircle->m_r;
+}
+
+// Copy assignment operator
+Circle& Circle::operator=(const Circle& other) {
+	if (this != &other) { // Prevent self-assignment
+		Point::operator=(other); // Copy base class members
+		m_r = other.m_r;         // Copy radius
+	}
+	return *this;
 }
 
 Circle::~Circle()

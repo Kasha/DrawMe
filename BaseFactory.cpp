@@ -1,32 +1,11 @@
 #include "stdafx.h"
 #include "BaseFactory.h"
 
-BaseFactory::BaseFactory()
-{
-}
-
-BaseFactory::~BaseFactory()
-{
-}
-
-ShapeFactoryBasePtr BaseFactory::getShape(const char* typeName)
-{
-	auto it = m_generatorsShapes.find(typeName);
-	if (it != m_generatorsShapes.end())
-	{
-		return it->second();
-	}
-
-	return nullptr;
-}
-
-bool BaseFactory::registerShapeGenerator(const char* typeName, const ShapeInstanceGenerator& funcCreate)
-{
-	return m_generatorsShapes.insert(std::make_pair(typeName, funcCreate)).second;
-}
-
-BaseFactory & BaseFactory::get()
-{
-	static BaseFactory instance;
-	return instance;
+// Retrieve the ShapeFactoryBase functor for a specific type name
+ShapeFactoryBasePtr BaseFactory::getShape(const std::string& typeName) {
+    auto it = m_shapeFactoryGenerator.find(typeName);
+    if (it != m_shapeFactoryGenerator.end()) {
+        return it->second(); // Call the generator function
+    }
+    return nullptr; // Type name not found
 }

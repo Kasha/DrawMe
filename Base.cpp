@@ -1,29 +1,28 @@
 #include "stdafx.h"
-#include "Base.h"
-#include "BaseFactory.h"
+#include "resources.h"
 
 using namespace ShapeMe;
 
 //Register Shape for generic Class Factory (The Only Place where Shape Type is mentioned)
-REGISTER_CLASS("Base", Base);
+REGISTER_SHAPE(Base);
 
-Base::Base(string name) : m_name(name)
-{
-}
-
-Base::Base(Base& base)
+// Copy constructor
+Base::Base(const Base& base)
 {
 	m_name = base.m_name;
 }
-
-Base::Base(Base*pBase)
+// Copy constructor from pointer
+Base::Base(const Base*pBase)
 {
 	m_name = pBase->m_name;
 }
-
-Base::~Base()
+// Copy assignment operator
+Base& Base::operator=(const Base& other)
 {
-	//printf("\n\nDestroy Base");
+	if (this != &other) { // Prevent self-assignment
+		m_name = other.m_name; // Copy the `m_name` member variable
+	}
+	return *this;
 }
 
 void Base::Draw()

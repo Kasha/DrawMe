@@ -45,7 +45,13 @@
     <ClInclude Include="BaseFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaseFactoryRegistrations.h">
+    <ClInclude Include="ShapeByBufferFactoryRegistrations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -101,6 +101,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +134,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,7 +152,9 @@
     <ClInclude Include="Base.h" />
     <ClInclude Include="BaseFactory.h" />
     <ClInclude Include="Circle.h" />
-    <ClInclude Include="BaseFactoryRegistrations.h" />
+    <ClInclude Include="Defines.h" />
+    <ClInclude Include="resources.h" />
+    <ClInclude Include="ShapeByBufferFactoryRegistrations.h" />
     <ClInclude Include="InArchive.h" />
     <ClInclude Include="OutArchive.h" />
     <ClInclude Include="Point.h" />

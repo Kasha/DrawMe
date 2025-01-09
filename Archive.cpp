@@ -4,14 +4,11 @@
 
 Archive::Archive()
 {
+	m_objects.reserve(10);
 }
 
 
-Archive::~Archive()
-{
-}
-
-void Archive::Add(shared_ptr<Base> obj)
+void Archive::Add(base_ptr obj)
 {
 	m_objects.push_back(obj);
 }

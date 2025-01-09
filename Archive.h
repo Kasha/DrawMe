@@ -2,21 +2,22 @@
 #include "Base.h"
 #include "Point.h"
 #include "Circle.h"
+#include <string.h>
 #include <vector>
 #include <fstream>
 #include <iostream>
 
 using namespace ShapeMe;
 
-typedef vector<shared_ptr<Base>> vectorOfPoints;
+using base_ptr = shared_ptr<Base>;
+using vectorOfPoints = vector<base_ptr>;
 
 class Archive
 {
 public:
 	Archive();
-	~Archive();
-
-	void Add(shared_ptr<Base> obj);
+	~Archive() = default;
+	void Add(base_ptr obj);
 protected:
 	vectorOfPoints m_objects;
 };

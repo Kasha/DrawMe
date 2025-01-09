@@ -2,14 +2,6 @@
 #include "OutArchive.h"
 #include "BaseFactory.h"
 
-OutArchive::OutArchive()
-{
-}
-
-OutArchive::~OutArchive()
-{
-}
-
 void OutArchive::Draw()
 {
 	for (auto &i : m_objects)
@@ -19,9 +11,9 @@ void OutArchive::Draw()
 	}
 }
 
-void OutArchive::Deserialization(char *fileName)
+void OutArchive::Deserialization(const string& fileName)
 {
-	ifstream iFile(fileName, ios::binary);
+	ifstream iFile(fileName.c_str(), ios::binary);
 	if (iFile.is_open())
 	{
 		size_t sz;

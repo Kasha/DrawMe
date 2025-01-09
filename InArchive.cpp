@@ -1,14 +1,6 @@
 #include "stdafx.h"
 #include "InArchive.h"
 
-InArchive::InArchive()
-{
-}
-
-
-InArchive::~InArchive()
-{
-}
 
 void InArchive::Draw()
 {
@@ -18,9 +10,9 @@ void InArchive::Draw()
 	}
 }
 
-void InArchive::Serialization(char *fileName)
+void InArchive::Serialization(const string& fileName)
 {
-	ofstream oFile(fileName, ios::binary);
+	ofstream oFile(fileName.c_str(), ios::binary);
 	for (auto &i : m_objects)
 	{
 		Base *pB = i.get();

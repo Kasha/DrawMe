@@ -1,27 +1,19 @@
 #include "stdafx.h"
-#include "BaseFactory.h"
 #include "Point.h"
-
+#include "resources.h"
 using namespace ShapeMe;
 
 //Register Shape for generic Class Factory (The Only Place where Shape Type is mentioned)
-REGISTER_CLASS("Point", Point);
+REGISTER_SHAPE(Point);
 
-Point::Point(float x, float y, string name) : Base(name)
-{
-	m_x = x;
-	m_y = y;
-}
-
-Point::Point(Point& point) : Base(point)
-{
-	m_x = point.m_x;
-	m_y = point.m_y;
-}
-Point::Point(Point* pPoint) : Base(pPoint)
-{
-	m_x = pPoint->m_x;
-	m_y = pPoint->m_y;
+// Copy assignment operator
+Point& Point::operator=(const Point& other) {
+    if (this != &other) { // Prevent self-assignment
+        Base::operator=(other); // Assign base class members
+        m_x = other.m_x; // Copy member variable m_x
+        m_y = other.m_y; // Copy member variable m_y
+    }
+    return *this;
 }
 
 Point::~Point()

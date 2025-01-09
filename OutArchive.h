@@ -4,10 +4,10 @@
 class OutArchive : public Archive
 {
 public:
-	OutArchive();
-	~OutArchive();
+	OutArchive() = default;
+	~OutArchive() = default;
 
 	void Draw();
-	void Deserialization(char *fileName);
+	void Deserialization(const string& fileName);
 };
 
