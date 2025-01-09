@@ -1,6 +1,5 @@
 # DrawMe
-Registers Base or Base Derived Class into a Generic Template Functor for Creating Shape when requested according to Buffer Rescued from file
-Generic serialization/Deserialization of multiple base derived objects.
+Registers a Base or Derived Class into a generic template functor to facilitate the creation of shape objects based on a buffer restored from a file, enabling seamless serialization and deserialization of diverse base-derived objects.
 
 1. Easy to implement and add new shape.
 2. Automatic shape factory registration for each derived base class - REGISTER_SHAPE(TYPE)   
